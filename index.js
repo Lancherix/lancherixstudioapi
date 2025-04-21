@@ -236,12 +236,12 @@ app.put('/api/users', verifyToken, upload.fields([{ name: 'profilePicture', maxC
       updatedUser.profilePicture = 'https://tse1.mm.bing.net/th?q=profile%20pic%20blank&w=250&h=250&c=7';
     } else if (req.files && req.files['profilePicture']) {
       const profilePicture = req.files['profilePicture'][0];
-      updatedUser.profilePicture = `http://localhost:3000/uploads/${encodeURIComponent(profilePicture.filename)}`;
+      updatedUser.profilePicture = `https://lancherixstudioapi.onrender.com/uploads/${encodeURIComponent(profilePicture.filename)}`;
     } 
     
     if (req.files && req.files['wallpaper']) {
       const wallpaperFile = req.files['wallpaper'][0];
-      updatedUser.wallpaper = `http://localhost:3000/wallpapers/${encodeURIComponent(wallpaperFile.filename)}`;
+      updatedUser.wallpaper = `https://lancherixstudioapi.onrender.com/wallpapers/${encodeURIComponent(wallpaperFile.filename)}`;
     } else if (wallpaper) {
       updatedUser.wallpaper = wallpaper;
     }
